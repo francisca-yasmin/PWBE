@@ -1,0 +1,22 @@
+MERGE SORT -------------------------------------------
+
+Merge Sort é um método de ordenação que consiste em dividir a lista original
+em sub-listas, que seriam listas menores e ordena essas pequenas listas e
+depois combina as pequenas listas entre si e gera uma lista final que vai
+estar combinada já.
+A combinação para gerar a lista final consiste em comparar os elementos das 
+listas e ordenar os seus componentes em ordem crescente na lista final, isso
+é feito até que todas as listas menores sejam combinas e ordenadas em uma 
+única lista.
+
+INSERTION SORT -------------------------------------------
+
+Funciona comparando cada elemento com os elementos anteriores, e inserindo
+os elementos na posição correta na lista.
+
+BUBBLE SORT -------------------------------------------
+
+O bubble sort realiza múltiplas passagem por uma lista. Ele compara itens 
+adjacentes e troca aqueles que estão fora de ordem. Cada passagem pela 
+lista coloca o próximo maior valor na sua posição correta.
+
