@@ -204,6 +204,27 @@
 
 # EXERCICIO 9
 
+# class Paciente:
+#     def __init__(self, nome, idade):
+#         self.nome = nome
+#         self.idade = idade
+#         self.historico = ['papa nicolau', 'exame de sangue']
+
+#     def adicionar_consulta(self):
+#         nova_consulta = input("Adicionar consulta ao historico: ")
+#         self.historico.append(nova_consulta)
+#         print(f"A consulta {nova_consulta} foi adicionada a lista de consultas.")
+
+#     def exibir_historico(self):
+#         print("\n###### HISTORICO DE CONSULTAS ######")
+#         print(self.historico)
+
+# paciente = Paciente("Fran", 19)
+
+# paciente.adicionar_consulta()
+# paciente.exibir_historico()
+
+
 ##########################################################################
 
 # EXERCICIO 10
@@ -407,45 +428,178 @@
 
 # EXERCICIO 14
 
-class Produto:
-    def __init__(self, nome, estoque, qtd_produto):
-        self.nome = nome
-        self.estoque = estoque
-        self.qtd = qtd_produto
+# class Produto:
+#     def __init__(self, nome, preco, qtd_produto):
+#         self.nome = nome
+#         self.preco = preco
+#         self.qtd = qtd_produto
 
-class MaquinaDeVendar:
-    def __init__(self):
-        self.produtos = []
-        self.dinheiro = 0
+# class MaquinaDeVendar:
+#     def __init__(self):
+#         self.produtos = {}
+#         self.dinheiro = 0
 
-    def cadastrar_produtos(self):
-        novo_produto = input("Digite o produto que deseja cadastrar: ")
-        self.produtos.append(novo_produto)
-        return "produto cadastrado com sucesso"
-    
-    def selecionar_produto(self, nome):
-        pass
-           
-                
-    def inserir_dinheiro(self, valor):
-        if valor > 0:
-            self.dinheiro += valor
-        else:
-            print("não tem troco a ser devolvido.")
+#     def cadastrar_produtos(self, nome, preco, qtd_produto):
+#         if nome in self.produtos:
+#             nome = input("Digite o produto que deseja cadastrar: ")
+#             self.produto[nome].qtd_produto += qtd_produto
+#         else:
+#             self.produtos[nome] = Produto(nome, preco, qtd_produto)
+#             print ("Produto cadastrado com sucesso")
 
-    def retornar_troco(self):
-        pass
+#     def selecionar_produto(self, nome_produto):
+#         if nome_produto in self.produtos:
+#             produto = self.produtos[nome_produto] #consulta o dicionario produtos
+#             if self.produto.qtd_produto > 0:
+#                 return produto
+#             else:
+#                 print(f"O produto {nome_produto} está esgotado")
 
-    def exibir_estoque(self):
-        print("Estoque disponivel.")
-        for produto in self.produtos:
-            print(produto)
+#     def inserir_dinheiro(self, valor):
+#         if valor > 0:
+#             self.dinheiro += valor
+#             print(f"Seu saldo atual agora eh: R${self.dinheiro:.2f}")
+#         else:
+#             print("não tem troco a ser devolvido.")
+
+#     def retornar_troco(self, preco_produto):
+#         if self.dinheiro > preco_produto:
+#             troco = self.dinheiro - preco_produto
+#             self.dinheiro = 0
+#             print(f"O seu troco eh de: R${troco}")
+
+#     def exibir_estoque(self):
+#         print("\nEstoque disponivel: ")
+#         for produto in self.produtos:
+#             print(produto)
 
 
+# maquina = MaquinaDeVendar()
+
+# #cadastrando produtos na maquina
+# maquina.cadastrar_produtos("kit-kat", 10.0, 25)
+# maquina.cadastrar_produtos("Chocolate Meio amargo", 20.0, 30)
+
+# maquina.exibir_estoque()
+
+# maquina.inserir_dinheiro(50.0)
+
+# maquina.exibir_estoque()
 
 ##########################################################################
 
 # EXERCICIO 15
+
 ##########################################################################
 
+# EXERCICIO 16
 
+##########################################################################
+
+# EXERCICIO 17
+
+# class Livro:
+#     def __init__(self, titulo, autor):
+#         self.titulo = titulo
+#         self.autor = autor
+#         self.disponivel = True
+
+#     def __str__(self):
+#         return f"{self.titulo} de {self.autor}"
+
+# class Biblioteca:
+#     def __init__(self):
+#         self.livros = []
+    
+#     def cadastrar_livros(self):
+#         titulo = input("Digite o titulo do livro que deseja cadastrar:  ")
+#         autor = input("Digite o autor do livro: ")
+
+#         novo_livro = Livro(titulo, autor)
+#         self.livros.append(novo_livro)
+#         print(f"{novo_livro} cadastrado com sucesso")
+
+#     def emprestar_livro(self, titulo):
+#         for titulo in self.livros:
+#                 if titulo.disponivel:
+#                     print("O livro foi emprestado.")
+#                     titulo.disponivel = False
+#                     return
+#                 else:
+#                     print("O livro já foi emprestado, chegou tarde :( ")
+
+#     def verifica_disponivel(self, titulo):
+#         if titulo in self.livros:
+#              print("O livro esta disponivel para emprestimo")
+#         else:
+#             print("O livro não esta disponivel")
+
+
+# biblioteca = Biblioteca()
+# biblioteca.cadastrar_livros()
+
+# titulo = input("\nDigite o titulo do livro para verificar disponibilidade: ")
+# biblioteca.verifica_disponivel(titulo)
+
+# biblioteca.emprestar_livro(titulo) #empresta o livro caso esteja dispnivel
+
+##########################################################################
+
+# EXERCICIO 18
+import calendar
+from datetime import datetime
+
+class Calendario:
+    def __init__(self):
+        self.feriados = {
+            "01-01", #ano novo
+            "25-12", # natal
+            "07-09" # independencia do Brasil 
+        }
+
+    def exibir_calendario(self):
+        pass
+
+    def verifica_feriado(self):
+        pass
+
+    def Difere_datas(self):
+        pass
+
+##########################################################################
+
+# EXERCICIO 19
+
+# import random
+
+# class JogoAdivinhacao:
+#     def __init__(self, min = 1, max = 100):
+#         self.num_secreto = random.randint(min, max)
+#         self.min = min
+#         self.max = max
+#         self.tentativas = 0
+
+#     def palpite(self):
+#         while True:
+#             self.tentativas += 1
+#             try:
+#                 palpite = int(input(f"\nDigite o palpite entre {self.min} e {self.max}: "))
+#                 if palpite < self.num_secreto:
+#                     print("O numero eh maior. Tente de novo ")
+#                 elif palpite > self.num_secreto:
+#                     print("O numero eh menor. Tente novamente")
+#                 elif palpite == self.num_secreto:
+#                     print("Voce acertou o numero! Parabens")
+#                     break
+#                 else:
+#                     print(f"Infelizmente você errou. O numero era {self.num_secreto}.")
+#             except ValueError:
+#                 print("Digite um valor valido.")
+
+# jogo = JogoAdivinhacao()
+
+# jogo.palpite()
+
+##########################################################################
+
+# EXERCICIO 20
