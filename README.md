@@ -1,5 +1,5 @@
-# dorivas
-## Commit de atividades feitas na aula de programação Backend desde o primeiro dia de aula.
+## dorivas
+Commit de atividades feitas na aula de programação Backend desde o primeiro dia de aula.
  - Programação Orientada a Objeto
    > Lista de exercicios e exemplos de como usar e otimizar o processo de prática
  - Django
