@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+</head>
+<body>
+    <h1> Listas de Tarefas </h1>
+
+    <ul>
+        {% for i in tarefas %}
+            <li>
+                <h2>{{ i.descricao }}</h2>
+                <p>{{ i.status|slice:":200" }}...</p>
+            </li>
+        {% endfor %}
+    </ul>
+       
+    
+</body>
+</html>

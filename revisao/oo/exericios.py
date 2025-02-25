@@ -546,25 +546,25 @@
 ##########################################################################
 
 # EXERCICIO 18
-# import calendar
-# from datetime import datetime
+import calendar
+from datetime import datetime
 
-# class Calendario:
-#     def __init__(self):
-#         self.feriados = {
-#             "01-01", #ano novo
-#             "25-12", # natal
-#             "07-09" # independencia do Brasil 
-#         }
+class Calendario:
+    def __init__(self):
+        self.feriados = {
+            "01-01", #ano novo
+            "25-12", # natal
+            "07-09" # independencia do Brasil 
+        }
 
-#     def exibir_calendario(self):
-#         pass
+    def exibir_calendario(self):
+        pass
 
-#     def verifica_feriado(self):
-#         pass
+    def verifica_feriado(self):
+        pass
 
-#     def Difere_datas(self):
-#         pass
+    def Difere_datas(self):
+        pass
 
 ##########################################################################
 

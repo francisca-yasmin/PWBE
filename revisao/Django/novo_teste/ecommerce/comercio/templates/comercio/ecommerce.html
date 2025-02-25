@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    <style>
+        .titulo{
+            color: darkred;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 class="titulo" enctype="multipart/form-data"> Ecommerce </h1>
+    <ul>
+        {% for i in ecommerce %}
+            <li>
+                <h2> {{i.produto}} </h2>
+                <img src= {{i.foto}}/>
+
+            </li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>

@@ -59,3 +59,5 @@ def contar_caracteres(s):
     return dicionario
 
 print(contar_caracteres(s))
+
+
