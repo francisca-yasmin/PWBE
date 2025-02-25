@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Item Read </title>
+</head>
+<body>
+
+    <h1> Listagem de itens </h1>
+    <a href="{% url 'item_create'%}"> Criar um novo itenzinho </a>
+    <ul>
+        {% for i in itens %}
+            <li>
+                {{i.nome}} - {{i.descricao}}
+                <br>
+                <a href="{% url 'item_update' i.pk%}"> Editar </a>
+                <br>
+                <a href="{% url 'item_delete' i.pk%}"> Deletar </a>
+
+            </li>
+
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
