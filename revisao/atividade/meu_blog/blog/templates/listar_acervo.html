@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+</head>
+<body>
+
+    <h1> Biblioteca Bosch</h1>
+    <a href="{% url 'cadastro_livro' %}"> Adicione um novo livro </a>
+    <ul>
+        {% for i in acervo %}
+            <li>
+                {{i.nome_livro}} - {{i.autor_livro}} {{i.data_publicacao}}
+                <br>
+                <a href="{% url 'atualizar' i.pk %}"> Editar </a>
+                <br>
+                <a href="{% url 'deletar' i.pk %}"> Deletar </a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>

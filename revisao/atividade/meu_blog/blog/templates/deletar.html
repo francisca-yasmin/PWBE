@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Deletar </title>
+</head>
+<body>
+
+    <h1>Deletar Livro do Acervo</h1>
+    
+    <p> Tem certeza que deseja deletar? {{i.nome_livro}} </p>
+    <form method="post">
+        {% csrf_token %}
+        
+        <button type="submit"> Sim, tenho certeza</button>
+    </form>
+    <a href="{% url 'listar_acervo' %}"> Errei fui mlk, não quero mais apagar </a>
+    
+</body>
+</html>
