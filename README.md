@@ -6,3 +6,4 @@ Commit de atividades feitas na aula de programação Backend desde o primeiro di
    > Instalando o **django** além do uso de bibliotecas.
  - CRUD
    > 25/02 foi feito uma aplicação usando CRUD em django
+   > Atividade de biblioteca, realizado no dia 10/03
