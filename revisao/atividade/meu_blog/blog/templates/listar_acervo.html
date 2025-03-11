@@ -1,31 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
-    <style>
-        h1,h2{
-            color: purple;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
 
-    <h1> Biblioteca Bosch</h1>
+    <h1 class="titulo"> Biblioteca Bosch</h1>
 
-    <form method="get" action="{% url 'listar_acervo' %}">
+    <form class= "form" method="get" action="{% url 'listar_acervo' %}">
         <input type="text" name="q" placeholder="Buscar por título, autor ou ano" value="{{ query }}">
         <button type="submit">Buscar</button>
     </form>
 
-    <ul>
-        {% for i in pesquisa %}
-            <li>{{ i.nome_livro }} </li>
-        {% empty %}
-            <li>Nenhum livro encontrado.</li>
-        {% endfor %}
-    </ul>
+    <div class="pequisa-container">
+        <ul class="pesquisa">
+            {% for i in pesquisa %}
+                <li>{{ i.nome_livro }} </li>
+            {% empty %}
+                <li>Nenhum livro encontrado.</li>
+            {% endfor %}
+        </ul>
+    </div>
 
     <ul>
         {% for i in acervo %}
