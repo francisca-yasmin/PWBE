@@ -7,6 +7,5 @@ class Biblioteca(models.Model):
     data_publicacao = models.DateTimeField()
     descricao = models.TextField()
 
-
     def __str__(self):
         return self.nome_livro

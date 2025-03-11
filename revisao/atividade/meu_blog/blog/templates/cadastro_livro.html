@@ -6,6 +6,13 @@
     <title> Cadastrar </title>
 </head>
 <body>
-    aaaaaaaaa
+    <h1>Cadastrar Livro</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ cadastro.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'listar_acervo' %}">Tela inicio</a>
 </body>
 </html>

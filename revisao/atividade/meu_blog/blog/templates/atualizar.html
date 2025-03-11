@@ -7,11 +7,14 @@
 </head>
 <body>
 
+    <h1>Atualizar informações </h1>
+
     <form action="" method="POST"> 
         {% csrf_token %}
-        {{cadastro_livro.as_p}}
+        {{cadastro.as_p}}
         <button type="submit">Enviar</button>
     </form>
+    <a href="{% url 'listar_acervo' %}"> Tela inicial </a>
     
 </body>
 </html>

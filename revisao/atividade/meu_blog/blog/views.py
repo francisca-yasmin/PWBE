@@ -5,7 +5,13 @@ from .forms import BibliotecaForm
 #VISUALIZAR - read a lista de acervos do livro
 def listar_acervo(request): #ler o acervo
     acervo = Biblioteca.objects.all().order_by('-data_publicacao')
-    return render(request, 'listar_acervo.html', {'acervo': acervo})
+    pesquisa = request.GET.get('q', '')
+    print(pesquisa)
+    livro = []
+    if pesquisa:
+        livro = Biblioteca.objects.filter(nome_livro__icontains = pesquisa).order_by('-data_publicacao')
+        print(livro)
+    return render(request, 'listar_acervo.html', {'acervo': acervo, 'pesquisa': livro})
 
 
 # CADASTRO -> CREATE cadastro de livro
@@ -29,8 +35,8 @@ def atualizar_livro(request, pk):
             cadastro.save()
             return redirect('listar_acervo')
     else:
-        cadastro = BibliotecaForm()
-        return render(request, 'atualizar.html', {'cadastro': cadastro, 'livro': livro})
+        cadastro = BibliotecaForm(instance=livro)
+        return render(request, 'atualizar.html', {'cadastro': cadastro})
     
 
 # REMOVE -> remove o livro criado pelo user
@@ -38,10 +44,9 @@ def remove_livro(request, pk):
     livro = get_object_or_404(Biblioteca, pk = pk)
     if request.method == 'POST':
         livro.delete()
-        return redirect('deletar')
+        return redirect('listar_acervo')
     return render(request, 'deletar.html', {'livro': livro})
     
-
 
             
 
