@@ -26,19 +26,22 @@
         </ul>
     </div>
 
-    <ul>
-        {% for i in acervo %}
-        <h2> Livros Listados </h2>
-            <li>
-                {{i.nome_livro}} - {{i.autor_livro}} 
-                <br>
-                <a href="{% url 'atualizar' i.pk %}"> Editar </a>
-           
-                <a href="{% url 'deletar' i.pk %}"> Deletar </a>
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'cadastro_livro' %}"> Adicione um novo livro </a>
-    
+    <div class="livros">
+
+        <ul>
+            {% for i in acervo %}
+            <h2> Livros Listados </h2>
+                <li>
+                    {{i.nome_livro}} - {{i.autor_livro}} 
+                    <br>
+                    <a href="{% url 'atualizar' i.pk %}"> Editar </a>
+               
+                    <a href="{% url 'deletar' i.pk %}"> Deletar </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'cadastro_livro' %}"> Adicione um novo livro </a>
+        
+    </div>
 </body>
 </html>
