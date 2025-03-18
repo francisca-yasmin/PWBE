@@ -1,6 +1,7 @@
 from django.db import models
 
 class Carro(models.Model):
+    #nome dos campos no banco de dados
     nome = models.CharField(max_length=255)
     marca = models.CharField(max_length=255)
     qtdRodas = models.PositiveIntegerField()
