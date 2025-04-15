@@ -20,17 +20,18 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 
-shema_view = get_schema_view(
+schema_view = get_schema_view(
     openapi.Info(
         title = 'API da Formula 1',
         default_version = 'v1',
         description = 'API de pilotos e carros da Foruma1'
     ),
-    public = True
+    public= True,
     permission_classes = (permissions.AllowAny,),
 )
 
-urlpatterns = [
+urlpatterns= [
     path('admin/', admin.site.urls),
-    path('', include('app.urls'))
+    path('', include('app.urls')),
+    path('doc/', view=schema_view.with_ui('swagger', cache_timeout=0)),
 ]

@@ -4,6 +4,8 @@ from .serializers import PilotoSerializer
 from .models import Piloto
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import serializers
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
 
 # PILOTO
 class PilotoPaginacao(PageNumberPagination):
@@ -11,11 +13,55 @@ class PilotoPaginacao(PageNumberPagination):
     page_query_param = 'page_size'
     max_page_size = 10 
 
+    # documentacao
+    @swagger_auto_schema( #listar todos os pilotos
+            operation_description='Lista todos os pilotos de Formula 1',
+            responses={ 
+                200: PilotoSerializer(many=True),
+                400: 'Error'
+            },
+            manual_parameters=[
+                openapi.Parameter(
+                    'nome',
+                    openapi.IN_QUERY,
+                    description='Filtrar pelo nome do piloto',
+                    type=openapi.TYPE_STRING
+
+                )
+            ]
+    )
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
+
+    @swagger_auto_schema(
+            operation_description='Cria um novo piloto',
+            request_body=PilotoSerializer,
+            responses={
+                201: PilotoSerializer,
+                400: 'error'
+            }
+    )
+
+    def post(self, request, *args, **kwargs):
+        return super().post(request, *args, **kwargs)
+
 class PilotoRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Piloto.objects.all()
     serializer_class = PilotoSerializer
     lookup_field = 'pk' # canmpo que eu vou consultar pra fazer as coisas que eu preciso
 
+    @swagger_auto_schema(
+        operation_description='Pega o piloto do ID fornecido',
+        responses={
+            200: PilotoSerializer,
+            404: 'Not Found',
+            400: 'Error'
+        }
+    )
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+    
 
 class PilotoListCreateAPIView(ListCreateAPIView):
     queryset = Piloto.objects.all()
