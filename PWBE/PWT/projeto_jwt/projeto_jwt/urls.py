@@ -1,8 +1,8 @@
 """
-URL configuration for formula1 project.
+URL configuration for projeto_jwt project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+    https://docs.djangoproject.com/en/5.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -16,21 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from drf_yasg import openapi
-from drf_yasg.views import get_schema_view
-from rest_framework import permissions
 
-shema_view = get_schema_view(
-    openapi.Info(
-        title = 'API da Formula 1',
-        default_version = 'v1',
-        description = 'API de pilotos e carros da Foruma1'
-    ),
-    public = True
-    permission_classes = (permissions.AllowAny,),
-)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app.urls'))
+    path('', include('jwt_app.urls')),
 ]

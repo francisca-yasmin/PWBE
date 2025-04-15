@@ -1,14 +1,20 @@
 from django.shortcuts import render
-from rest_framework.generics import ListCreateAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView #retrive ->
 from .serializers import PilotoSerializer
 from .models import Piloto
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import serializers
 
+# PILOTO
 class PilotoPaginacao(PageNumberPagination):
     page_size = 5 #tamanho (inicial) da pagina
     page_query_param = 'page_size'
-    max_page_size = 10 #
+    max_page_size = 10 
+
+class PilotoRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Piloto.objects.all()
+    serializer_class = PilotoSerializer
+    lookup_field = 'pk' # canmpo que eu vou consultar pra fazer as coisas que eu preciso
 
 
 class PilotoListCreateAPIView(ListCreateAPIView):
