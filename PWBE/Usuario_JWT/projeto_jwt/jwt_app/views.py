@@ -19,6 +19,7 @@ def criar_user(request):
     escolaridade = request.data.get('escolaridade')
     bio = request.data.get('bio')
     qtd_animais = request.data.get('qtd_animais')
+    
     #verifica se os campos obrigatorios estão completos
     if not username or not idade or not telefone:
         return Response({'erro': 'campos obrigatórios incompletos'}, status=status.HTTP_400_BAD_REQUEST)
