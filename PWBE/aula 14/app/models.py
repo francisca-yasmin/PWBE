@@ -22,4 +22,7 @@ class Carro(models.Model):
     cor = models.CharField(max_length=50, choices=escolha_cores)
     piloto = models.ForeignKey(Piloto, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.nome
+
 
