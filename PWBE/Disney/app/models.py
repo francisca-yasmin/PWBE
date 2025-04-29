@@ -6,7 +6,6 @@ class Empresa(models.Model):
     cnpj = models.CharField(max_length=100)
 
 
-
 class Usuario(AbstractUser):
     apelido = models.CharField(max_length=100, null=True)
     telefone = models.CharField(max_length=100, null=True, blank=True)
@@ -28,3 +27,8 @@ class Usuario(AbstractUser):
     REQUIRED_FIELDS = ['colaborador']
 
     empresa = models.ForeignKey(Empresa,on_delete=models.CASCADE)
+
+
+class Ingresso(models.Model):
+    nome = models.CharField(max_length=100)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
