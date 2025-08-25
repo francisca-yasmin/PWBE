@@ -1,0 +1,18 @@
+@use './variaveis' as *;
+
+.coluna{
+    background-color: $background;
+    border: 2px solid $secondary;
+    border: 6px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    .titulo{
+        font-size: 18px;
+        color: $primary;
+        text-align: center;
+        font-family: $font-primary;
+    }
+}

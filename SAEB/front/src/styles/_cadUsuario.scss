@@ -1,0 +1,15 @@
+@use './variaveis' as *;
+
+.main{
+    background-color: $background;
+    max-width: 600px;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 12px;
+
+    h2{
+        color: $accent;
+        font-size: $font-primary;
+        text-align: center;
+    }
+}

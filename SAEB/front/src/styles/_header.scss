@@ -1,0 +1,10 @@
+@use './variaveis' as *;
+
+.header{
+    background-color: $accent;
+    height: 80px;
+
+    h1{
+        color: $background;
+    }
+}
