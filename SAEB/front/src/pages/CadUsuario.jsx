@@ -16,6 +16,28 @@ const schemaCadUsuario = z.object({
 })
 
 export function CadUsuario(){
+    
+    const {
+        register,
+        handleSubmit,
+        formSrtate: { errors },
+        reset
+    } = useForm({
+        resolver: zodResolver(schemaCadUsuario)
+    });
+
+     async function obterdados(data) {
+        console.log('dados informados pelo user:', data)
+ 
+        try {
+            await axios.post("http://127.0.0.1:8000/usuario/", data);
+            alert("USuário cadastrado com sucesso");
+            reset();
+        } catch (error) {
+            alert("Éeee, não rolou, na proxima talvez")
+            console.log("Erros", error)
+        }
+    }
     return(
         <form>
             <h2>Cadastro do Usuário</h2>
