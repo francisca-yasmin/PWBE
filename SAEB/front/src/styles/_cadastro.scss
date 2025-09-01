@@ -2,48 +2,53 @@
  
 .formularios{
     max-width: 600px;
-    margin: 20px;
-    padding: 10px;
+    margin: 40px auto 20px auto; // aumenta a margem superior para desgrudar do header
+    padding: 20px;
     background-color: $background;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap:10px;
-    justify-content: center ;
+    justify-content: center;
    
- 
     h2{
         text-align: center;
-        margin-bottom: 2px;
-        font-size: 18px;
-        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: 'Poppins';
         color:$primary;
     }
    
- 
-        label{
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: $primary
-        }
-        input{
-            padding: 10px;
-            border: 1px solid $primary;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-        button{
-            padding: 10px;
-            background-color: $accent;
-            color: $background;
-            font-size: 16px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .errors{
-            font-size: 12px;
-            color:red;            
-        }
- 
+    label{
+        font-weight: bold;
+        font-family: 'Poppins';
+        margin-bottom: 4px; // diminui espaço entre label e input
+        color: $primary;
+        display: inline-block;
+        padding: 4px 8px; // para arredondar visualmente
+        border-radius: 8px;
+    }
+
+    input, select, textarea{
+        padding: 10px;
+        border: 1px solid $primary;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    button{
+        padding: 10px;
+        background-color: $accent;
+        color: $background;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .errors{
+        font-size: 16px;
+        color:red;            
+    }
 }
