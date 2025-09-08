@@ -10,11 +10,11 @@ import { z } from 'zod';//zod é uma descrição de como eu validar, quais seria
 import { zodResolver } from '@hookform/resolvers/zod';//é o que liga o hook form com o zod
 
 const schemaCadTarefa = z.object({
-    descricao: z.string()
+    desc_tarefa: z.string()
         .min(10, 'Insira ao menos uma frase')
         .max(100, 'Insira uma descrição válida'),
 
-    nomeSetor: z.string()
+    nome_setor: z.string()
         .min(1, 'Insira o nome do setor')
         .max(100, 'Máximo 100 caracteres')
         .regex(/^[A-Za-zÀ-ÿ\s]+$/, 'Digite apenas letras'),
@@ -70,6 +70,7 @@ export function CadTarefa(){
         } catch (error){
             alert("Erro no cadastro da tarefa. Verifique as informações")
             console.log("Erros", error)
+            console.log(error.response.data)
         }
     }
 
@@ -80,7 +81,7 @@ export function CadTarefa(){
             <label>Nome do usuário </label>
             <select
                 {...register('usuario', { valueAsNumber: true })}>
-                    <option>Selecione o usuário: </option>
+                    <option>Selecione o usuário </option>
                         {usuarios.map((user) => (
                             <option key={user.id} value={user.id}>
                                 {user.nome}
@@ -93,14 +94,15 @@ export function CadTarefa(){
             <label>Descrição: </label>
             <input 
             type="text" 
-            {...register("descricao")} />
+            {...register("desc_tarefa")} />
             {errors.descricao && <p className= 'errors'> {errors.descricao.message}</p>}
 
             <label>Nome do setor: </label>
             <input 
-            type="text" 
-            {...register("nomeSetor")}
-            placeholder='escola' />
+                type="text" 
+                {...register("nome_setor")}
+                placeholder='trabalho' 
+            />
             {errors.nomeSetor && <p className= 'errors'> {errors.nomeSetor.message}</p>}
 
             <label>Prioridade: </label>

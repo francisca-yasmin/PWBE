@@ -11,6 +11,7 @@ export function Rotas(){
                 <Route index element ={<Quadro/>}/>
                 <Route path= '/cadUsusario' element={<CadUsuario/>}/>
                 <Route path='/cadTarefa' element={<CadTarefa/>}/>
+                <Route path='/editarTarefa/:id' element={<EditarTarefa/>}/>
             </Route>
         </Routes>
     );

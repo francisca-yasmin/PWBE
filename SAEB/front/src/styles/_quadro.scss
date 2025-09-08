@@ -1,18 +1,21 @@
 @use './variaveis.scss' as *;
 
-.conteiner{
+.conteiner {
     max-width: 1440px;
-    margin: 10px;
+    margin: 10px auto;
     padding: 10px;
-    flex-direction: column;
-    gap: 2px;
-    background-color: $secondary;
     display: flex;
-    margin-left: 23vh;
+    flex-direction: row; // altera para linha
+    gap: 20px;           // espaço entre as colunas
+    background-color: $secondary;
+    justify-content: center; // centraliza as colunas horizontalmente
+    align-items: flex-start; // alinha topo das colunas
 
-    h1{
+    h1 {
+        width: 100%;
+        text-align: center;
         font-size: 26px;
         color: $background;
-        
+        margin-bottom: 20px;
     }
 }

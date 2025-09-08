@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import status
+from rest_framework.response import Response
 from .models import Usuario, Tarefa
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from .serializers import UsuarioSerializer, TarefaSerializer
