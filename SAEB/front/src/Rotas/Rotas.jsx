@@ -3,6 +3,7 @@ import { Inicial } from '../pages/Inicial';
 import { Quadro } from '../components/Quadro';
 import { CadUsuario } from '../pages/CadUsuario';
 import { CadTarefa } from '../pages/CadTarefa';
+import { EditarTarefa } from '../pages/EditarTarefa';
 
 export function Rotas(){
     return(

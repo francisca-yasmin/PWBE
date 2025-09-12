@@ -49,7 +49,7 @@ export function Tarefa({ tarefa }){
                 <dd>{tarefa.prioridade}</dd>
             </dl>
 
-                <button onClick={()=> navigate(`/editarTarefa/${id}`)}>Editar</button>
+                <button onClick={() => navigate(`/editarTarefa/${tarefa.id}`)}>Editar</button>
                 <button onClick={() => excluirTarefa(tarefa.id)}>Excluir</button>
 
             <form>

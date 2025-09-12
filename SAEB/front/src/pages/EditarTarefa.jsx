@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getErrorMap } from "zod/v3";
 
 //schema de validção de edição de tarefas
 const schemaEditarTarefas = z.object({
@@ -54,12 +53,12 @@ export function EditarTarefa(){
     return(
         <section>
             <h2>Editar Tarefa</h2>
-            <form onSubmit={handleSubmit(salvarEdicao)}>
+            <form className="formularios" onSubmit={handleSubmit(salvarEdicao)}>
                 <label>Descrição:</label>
-                <textarea value = {tarefa.desc_tarefa} readOnly/>
+                <textarea value = {tarefa?.desc_tarefa} readOnly/>
 
                 <label>Setor:</label>
-                <input type="text" value={tarefa.setor} readOnly/>
+                <input type="text" value={tarefa?.setor} readOnly/>
 
                 <label>Prioridade</label>
                 <select {...register('prioridade')}>
