@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';//Hook determinado pela palavra (use) na frente
 import { z } from 'zod';//zod é uma descrição de como eu validar, quais serial as regras
 import { zodResolver } from '@hookform/resolvers/zod';//é o que liga o hook form com o zod
+import { useNavigate } from 'react-router-dom';//permite navegar entre as páginas
 
 const schemaCadTarefa = z.object({
     desc_tarefa: z.string()
@@ -34,6 +35,7 @@ const schemaCadTarefa = z.object({
 
 export function CadTarefa(){
     const [usuarios, setUsuarios] = useState([]);
+    const navigate = useNavigate();
 
      const {
         register, //registra pra mim oq o usuario faz
@@ -65,8 +67,9 @@ export function CadTarefa(){
 
         try{
             await axios.post("http://127.0.0.1:8000/tarefa/", data);
-            alert("Tarefa cadastrada com sucesso");
+            alert("Tarefa cadastrada com sucesso"); 
             reset(); ///limpo meu form
+            navigate('/') //depois de cadastrar a tarefa, levo o usuario para o quadro
         } catch (error){
             alert("Erro no cadastro da tarefa. Verifique as informações")
             console.log("Erros", error)

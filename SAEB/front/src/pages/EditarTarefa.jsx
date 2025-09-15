@@ -52,8 +52,8 @@ export function EditarTarefa(){
 
     return(
         <section>
-            <h2>Editar Tarefa</h2>
             <form className="formularios" onSubmit={handleSubmit(salvarEdicao)}>
+            <h2>Editar Tarefa</h2>
                 <label>Descrição:</label>
                 <textarea value = {tarefa?.desc_tarefa} readOnly/>
 

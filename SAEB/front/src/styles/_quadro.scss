@@ -4,12 +4,11 @@
     max-width: 1440px;
     margin: 10px auto;
     padding: 10px;
-    display: flex;
-    flex-direction: row; // altera para linha
-    gap: 20px;           // espaço entre as colunas
     background-color: $secondary;
-    justify-content: center; // centraliza as colunas horizontalmente
-    align-items: flex-start; // alinha topo das colunas
+
+    display: flex;
+    flex-direction: column; // título em cima
+    align-items: center;
 
     h1 {
         width: 100%;
@@ -17,5 +16,15 @@
         font-size: 26px;
         color: $background;
         margin-bottom: 20px;
+    }
+
+    // nova área para as colunas
+    .colunas {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
     }
 }
