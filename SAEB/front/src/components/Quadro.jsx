@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Coluna } from "./Coluna";
+import { DndContext } from "@dnd-kit/core"; //biblioteca para drag and drop -> clicar e arrastar
 
 export function Quadro () {
     const [tarefas, setTarefas] = useState([]);
@@ -10,6 +11,8 @@ export function Quadro () {
 
         //construo uma variável com o endereço da API
         const apiURL = 'http://127.0.0.1:8000/tarefa/';
+
+        
 
         //permite a chamada do endereço
         axios.get(apiURL)
